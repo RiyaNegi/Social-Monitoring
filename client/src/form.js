@@ -115,7 +115,7 @@ function FormInput(props) {
                 </form>
             </div>) : <div className="d-flex flex-column">
                     <span className="answer">{result ? result : "kjfd"}</span>
-                    <button onClick={() => setChange(!change)} className="button-style mt-5 p-2">Recheck</button>}
+                    <button onClick={() => setChange(!change)} className="button-style mt-5 p-2">Recheck</button>
                 </div>
             }
             <ToastContainer

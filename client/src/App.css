@@ -48,16 +48,7 @@
   box-shadow:   2px 5px 14px 0px rgba(44, 48, 50, 0.5);
 }
 
-.App-header {
-  background-image: url("Sarcasm3.png");
-  background-size: 1425px 723px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
+
 
 .button-style{
   background-color: rgb(241, 115, 142);
