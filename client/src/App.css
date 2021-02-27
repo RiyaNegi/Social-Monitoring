@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.heading{
+  font-size: 40px;
+  font-weight: 800;
+  color: rgb(156, 156, 156);
+}
+
+.answer{
+  font-size: 30px;
+  font-weight: 800;
+  color :rgb(156, 156, 156);
+}
+
+.input-style{
+  font-size: 18px;
+  border:none;
+  color:rgb(156, 156, 156);;
+  background-color: transparent;
+  border-bottom:2px solid rgb(214, 214, 214);
+}
+
+.input-style::placeholder{
+  color:rgb(187, 187, 187);
+}
+
+.input-style:focus{
+  outline: 0;
+}
+
+.form-box{
+  background-color: white;
+  border : 1px solid #b9b9b9;
+  border-radius : 8px;
+  box-shadow:   2px 5px 14px 0px rgba(44, 48, 50, 0.5);
+}
+
+.App-header {
+  background-image: url("Sarcasm3.png");
+  background-size: 1425px 723px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.button-style{
+  background-color: rgb(241, 115, 142);
+  border:none;
+  border-radius:6px;
+  font-size: 18px;
+  font-weight: 800;
+  color:white;
+  cursor:pointer;
+}
+
+.button-style:focus{
+  outline: 0;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.exit-btn{
+  border:none;
+  background-color: transparent;
+  cursor:pointer;
+  margin-bottom: 40px;
+}
+
+
+.exit-btn:focus{
+  outline: 0;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
