@@ -1,0 +1,13 @@
+/* a:-webkit-any-link {
+    text-decoration: none;
+    color: inherit;
+  } */
+.link{
+    color: rgb(219, 219, 219);
+    text-decoration:none;
+
+}
+a:hover{
+    color:gray !important;
+    text-decoration:none !important;
+}
