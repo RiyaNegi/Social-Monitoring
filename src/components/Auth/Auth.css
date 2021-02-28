@@ -10,16 +10,15 @@
     font-size: 40px;
     font-family: 'Arima Madurai', cursive;   
     color:rgb(49, 49, 49);
-
+    margin-top: -10px;
 }
 .form-info{
-    margin-left: 80px;
     width:350px;
 }
 .form-card{
     background-color: #ffffff;
     width:fit-content;
-    padding:20px 50px;
+    padding:40px 50px;
     border-radius: 12px;
     box-shadow: 2px 10px 30px -3px rgba(119,119,119,0.83);
 -webkit-box-shadow: 2px 10px 30px -3px rgba(119,119,119,0.83);

@@ -1,0 +1,39 @@
+.dashboard-body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.card-title{
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    color:rgb(49, 49, 49);
+}
+.card-body{
+    display: flex;
+    background-color: #ffffff;
+    padding:10px;
+    margin:10px;
+    border-radius: 6px;
+    border: 1px solid rgb(228, 228, 228);
+    min-width: 400px;
+    height: 330px;
+    max-width: 720px;
+}
+.img-body{
+    display: flex;
+    background-color: #666a74;
+    padding:10px;
+    margin:10px;
+    border-radius: 6px;
+    border: 1px solid rgb(228, 228, 228);
+    /* min-width: 400px;
+    min-height: 320px;
+    max-width: 720px;
+    max-height: 400px; */
+}
+
+.special{
+    display: flex;
+    height:300px;
+    width:650px !important;
+}

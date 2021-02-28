@@ -5,9 +5,14 @@
 .link{
     color: rgb(219, 219, 219);
     text-decoration:none;
+    font-family: 'Roboto Slab', serif;
 
 }
 a:hover{
     color:gray !important;
     text-decoration:none !important;
+}
+.web-name{
+    font-family: 'Arima Madurai', cursive;   
+    color:rgb(49, 49, 49);
 }
