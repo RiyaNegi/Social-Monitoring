@@ -2,9 +2,7 @@ import './App.css';
 import NavSlide from './components/NavSlide'
 import { withRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
+import Sockett from "./Socket"
 
 function App(props) {
   return (
