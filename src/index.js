@@ -9,11 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <BrowserRouter>
-      <Route>
-        <Switch>
-          <Routes />
-        </Switch>
-      </Route>
-    </BrowserRouter>,
+    <Route>
+      <Switch>
+        <Routes />
+      </Switch>
+    </Route>
+  </BrowserRouter>,
   document.getElementById('root')
 );
