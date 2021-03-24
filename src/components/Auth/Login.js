@@ -36,7 +36,6 @@ const Login = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log("was I called?", form)
     login(form)(authDispatch);
   }
 

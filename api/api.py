@@ -1,5 +1,5 @@
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_socketio import SocketIO, send
 from flask_jwt import JWT, jwt_required, current_identity
 from werkzeug.security import safe_str_cmp
@@ -8,12 +8,12 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret'
+app.config['CORS_HEADERS'] = 'Content-Type'
 CORS(app, support_credentials=True)
 
 
 socketIo = SocketIO(app, cors_allowed_origins="*")
 app.debug = True
-app.host = 'localhost'
 
 @socketIo.on("message")
 def handleMessage(msg):
@@ -62,7 +62,6 @@ def index():
     return render_template("../public/index.html")
 
 
-
 jwt = JWT(app, authenticate, identity)
 
 @app.route('/protected')
@@ -72,8 +71,9 @@ def protected():
     
 @app.after_request
 def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', '*')
-  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
+  response.headers.add('Access-Control-Allow-Credentials', 'true')
+  response.headers.add('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Authorization')
   response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
   return response
 

@@ -6,18 +6,18 @@ import {
   LOGIN_ERROR,
 } from "../../helpers/constants";
 export const login = ({ email, password }) => (dispatch) => {
-  console.log("reached", axiosInstance)
   dispatch({
     type: LOGIN_LOADING,
   });
 
-  axios.post("http://127.0.0.1:5000/auth/login", JSON.stringify({
-    email: email,
-    password: password
-  }), {
-    "Content-Type": "application/json",
-    Accept: "application/json"
-  })
+  const options = {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    }
+  };
+
+  axios.post("http://localhost:5000", { email, password }, options)
     .then((res) => {
       localStorage.token = res.data.token;
       dispatch({
