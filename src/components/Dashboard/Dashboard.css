@@ -8,6 +8,23 @@
     font-family: 'Roboto Slab', serif;
     color:rgb(49, 49, 49);
 }
+
+.card-bodyTop{
+    display: flex;
+    width: 100%;
+}
+.one{
+width:40%
+}
+.two{
+    width:35%
+
+}
+.three{
+    width:15%
+
+}
+
 .card-body{
     display: flex;
     background-color: #ffffff;
@@ -15,9 +32,6 @@
     margin:10px;
     border-radius: 6px;
     border: 1px solid rgb(228, 228, 228);
-    min-width: 400px;
-    height: 330px;
-    max-width: 720px;
 }
 .img-body{
     display: flex;
@@ -32,8 +46,3 @@
     max-height: 400px; */
 }
 
-.special{
-    display: flex;
-    height:300px;
-    width:650px !important;
-}

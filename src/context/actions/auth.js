@@ -17,7 +17,7 @@ export const login = ({ email, password }) => (dispatch) => {
     }
   };
 
-  axios.post("http://localhost:5000", { email, password }, options)
+  axios.post("http://localhost:5000", { email, password })
     .then((res) => {
       localStorage.token = res.data.token;
       dispatch({

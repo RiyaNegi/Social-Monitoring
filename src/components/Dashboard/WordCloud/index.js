@@ -1,5 +1,4 @@
 import React from 'react'
-import WordCloud from "./WordCloud"
 import ReactWordcloud from 'react-wordcloud';
 
 const words = [
@@ -247,9 +246,9 @@ const words = [
 ]
 
 const Index = () => {
-    return <div className="d-flex flex-column px-3">
+    return <div className="d-flex flex-column px-2">
         <div className="card-title text-center">Word Cloud</div>
-        <div style={{ height: 300, width: 650 }}>
+        <div style={{ height: 270, width: 220 }}>
             <ReactWordcloud words={words} />
         </div>
     </div>

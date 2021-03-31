@@ -1,5 +1,4 @@
 import React from 'react'
-import Random from "./Random"
 import youtube from "../../../assets/youtube.png"
 import reddit from "../../../assets/reddit.png"
 import google from "../../../assets/google.png"

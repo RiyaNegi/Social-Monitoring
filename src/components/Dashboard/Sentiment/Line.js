@@ -49,7 +49,7 @@ const data = [
 const Linegraph = () => {
     return <ResponsiveContainer width="100%" height="100%">
         <LineChart
-            width={200}
+            width={230}
             height={300}
             data={data}
             margin={{
