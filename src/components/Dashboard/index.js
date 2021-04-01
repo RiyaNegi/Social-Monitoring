@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Dashboard.css"
-import Random from "./Random"
+import Buzz from "./Buzz"
 import Sentiment from "./Sentiment"
 import WordCloud from "./WordCloud"
 import Mention from "./Mention"
@@ -8,22 +8,22 @@ import Predictor from "./Predictor"
 
 const Dashboard = () => {
   return <div className="dashboard-body">
-    <div className="d-flex flex-wrap card-bodyTop">
-      <div className="card-body one">
+    <div className="card-bodyTop">
+      <div className="card m-2 p-3 body-radius  one">
         <Predictor />
       </div>
-      <div className="card-body two">
+      <div className="card m-2 p-3 body-radius two">
         <Sentiment />
       </div>
-      <div className="card-body three">
+    </div>
+    <div className="card-bodyTop">
+      <div className="card m-2 p-3 body-radius three">
+        <Buzz />
+      </div>
+      <div className="card m-2 p-3 body-radius five">
         <WordCloud />
       </div>
-    </div>
-    <div className="d-flex flex-wrap">
-      <div className="card-body">
-        <Random />
-      </div>
-      <div className="card-body">
+      <div className="card m-2 p-3 body-radius four ">
         <Mention />
       </div>
     </div>

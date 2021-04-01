@@ -49,7 +49,7 @@ const data = [
 const Linegraph = () => {
     return <ResponsiveContainer width="100%" height="100%">
         <LineChart
-            width={230}
+            width={300}
             height={300}
             data={data}
             margin={{
@@ -64,8 +64,8 @@ const Linegraph = () => {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="negative" stroke="#FF8042" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="postive" stroke="#00C49F" />
+            <Line type="monotone" dataKey="negative" stroke="#51AAFF" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="postive" stroke="#00D7FF" />
         </LineChart>
     </ResponsiveContainer>
 }

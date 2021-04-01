@@ -7,7 +7,7 @@ const data = [
     { name: 'Negative', value: 100 },
 ];
 
-const COLORS = ['#0088FE', '#00C49F', '#FF8042'];
+const COLORS = ['#00D7FF', '#51AAFF', '#BFBFBF'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -31,7 +31,7 @@ const Sentiment = () => {
                 cy="50%"
                 labelLine={false}
                 label={renderCustomizedLabel}
-                outerRadius={60}
+                outerRadius={90}
                 fill="#8884d8"
                 dataKey="value"
             >

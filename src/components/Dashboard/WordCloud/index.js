@@ -247,9 +247,13 @@ const words = [
 
 const Index = () => {
     return <div className="d-flex flex-column px-2">
-        <div className="card-title text-center">Word Cloud</div>
-        <div style={{ height: 270, width: 220 }}>
-            <ReactWordcloud words={words} />
+        <div className="card-title text-left">Word Cloud</div>
+        <div style={{ height: 270, width: 260 }}>
+            <ReactWordcloud words={words} options={{
+                fontFamily: 'Georgia, serif',
+                fontSizes: [20, 50],
+                colors: ['#A3F0FF', '#51AAFF', '#02D6FF', '#00C3E8', '#00A4C3', '#00A4C3']
+            }} />
         </div>
     </div>
 }
