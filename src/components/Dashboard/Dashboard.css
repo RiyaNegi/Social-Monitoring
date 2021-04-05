@@ -37,4 +37,5 @@ width:20%
 
 .buzz{
     overflow-y: scroll;
+    height:300px;
 }

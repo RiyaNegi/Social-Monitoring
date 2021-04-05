@@ -111,8 +111,8 @@ const Predictor = () => {
                 <CartesianGrid strokeDasharray="5 5" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="uv" stroke="#51AAFF" fill="#51AAFF" />
-                <Area type="monotone" dataKey="pv" stroke="#00D7FF" fill="#00D7FF" />
+                <Area type="monotone" dataKey="uv" stroke="#04ABFE" fill="#04ABFE" />
+                <Area type="monotone" dataKey="pv" stroke="#73D7FA" fill="#73D7FA" />
             </AreaChart>
         </ResponsiveContainer>
     </div>
