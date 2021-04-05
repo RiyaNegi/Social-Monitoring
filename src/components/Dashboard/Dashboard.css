@@ -7,6 +7,8 @@
     font-size: 18px;
     font-family: 'Roboto Slab', serif;
     color:rgb(163, 163, 163);
+    cursor: pointer;
+    width:180px;
 }
 
 .card-bodyTop{

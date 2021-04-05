@@ -59,13 +59,13 @@ const Linegraph = () => {
                 bottom: 5,
             }}
         >
-            <CartesianGrid strokeDasharray="3 3" />
+            {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="negative" stroke="#04ABFE" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="postive" stroke="#73D7FA" />
+            <Line type="monotone" dataKey="negative" stroke="#eb8c9c" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="postive" stroke="#8cafeb" />
         </LineChart>
     </ResponsiveContainer>
 }

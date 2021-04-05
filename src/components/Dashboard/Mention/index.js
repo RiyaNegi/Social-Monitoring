@@ -1,7 +1,8 @@
 import React from 'react'
 import "./Mention.css"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
+import Tooltipp from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 const data = [
     {
         name: '1st Jan 2021',
@@ -86,7 +87,16 @@ const data = [
 
 const Index = () => {
     return <div className="card-width d-flex flex-column px-3" style={{ width: 500, height: 250 }}>
-        <div className="card-title text-left">Mentions </div>
+        <OverlayTrigger
+            placement={'right'}
+            overlay={
+                <Tooltipp style={{ opacity: 0.7 }} >
+                    See the total number of mentions of your brand across various social media platforms over time.
+        </Tooltipp>
+            }
+        >
+            <div className="card-title text-left">Total Mentions </div>
+        </OverlayTrigger>
         < ResponsiveContainer width="100%" height="100%">
             <AreaChart
                 width={200}
@@ -101,15 +111,15 @@ const Index = () => {
             >
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#04ABFE" stopOpacity={0.8} />
-                        <stop offset="95%" stopColor="#04ABFE" stopOpacity={0} />
+                        <stop offset="5%" stopColor="#8cafeb" stopOpacity={0.8} />
+                        <stop offset="95%" stopColor="#8cafeb" stopOpacity={0} />
                     </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="5 5" />
+                {/* <CartesianGrid strokeDasharray="5 5" /> */}
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="uv" stroke="#04ABFE" fillOpacity={1} fill="url(#colorUv)" />
+                <Area type="monotone" dataKey="uv" stroke="#8cafeb" fillOpacity={1} fill="url(#colorUv)" />
             </AreaChart>
         </ResponsiveContainer>
     </div >

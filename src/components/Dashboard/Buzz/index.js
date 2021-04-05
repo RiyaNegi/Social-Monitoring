@@ -7,21 +7,30 @@ import youtube from "../../../assets/youtube.png"
 import reddit from "../../../assets/reddit.png"
 import google from "../../../assets/google.png"
 import twitter from "../../../assets/twitter.png"
+import Tooltip from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
 
 export default function Index() {
   const [active, setActive] = useState('All');
 
   const handleActiveClick = value => {
-    console.log('here', value);
     setActive(value);
   };
 
-  console.log(Data);
-
   return (
     <div className="buzz">
-      <div className="card-title text-left">Social Media Buzz </div>
+      <OverlayTrigger
+        placement={'right'}
+        overlay={
+          <Tooltip style={{ opacity: 0.7 }} >
+            See all the mentions of your brand across various social media platforms
+        </Tooltip>
+        }
+      >
+        <div className="card-title text-left">Social Media Buzz </div>
+      </OverlayTrigger>
+
       <article className="panel is-info">
         <p className="panel-tabs is-boxed">
           <a

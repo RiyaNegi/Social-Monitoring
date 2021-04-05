@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactWordcloud from 'react-wordcloud';
+import Tooltip from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
 const words = [
     {
@@ -247,12 +249,20 @@ const words = [
 
 const Index = () => {
     return <div className="d-flex flex-column px-2">
-        <div className="card-title text-left">Word Cloud</div>
+        <OverlayTrigger
+            placement={'right'}
+            overlay={
+                <Tooltip style={{ opacity: 0.7 }} >
+                    See all the keywords related to your brand across various social media platforms
+        </Tooltip>}
+        >
+            <div className="card-title text-left">Word Cloud</div>
+        </OverlayTrigger>
         <div style={{ height: 270, width: 260 }}>
             <ReactWordcloud words={words} options={{
                 fontFamily: 'Georgia, serif',
                 fontSizes: [20, 50],
-                colors: ['#A3F0FF', '#51AAFF', '#02D6FF', '#00C3E8', '#00A4C3', '#00A4C3']
+                colors: ['#8cafeb', '#627aa4', '#eb8c9c', '#a4626d', '#7d6e62', '#be8e96']
             }} />
         </div>
     </div>

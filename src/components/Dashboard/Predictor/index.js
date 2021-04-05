@@ -1,6 +1,7 @@
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
+import Tooltipp from 'react-bootstrap/Tooltip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 const data = [
     {
         name: '1st Jan 2021',
@@ -84,7 +85,16 @@ const data = [
 
 const Predictor = () => {
     return <div style={{ width: 700, height: 260 }}>
-        <div className="card-title text-left">Outreach Predictor</div>
+        <OverlayTrigger
+            placement={'right'}
+            overlay={
+                <Tooltipp style={{ opacity: 0.7 }} >
+                    See how much outreach your brand is getting across various social media platforms
+        </Tooltipp>
+            }
+        >
+            <div className="card-title text-left">Outreach Predictor</div>
+        </OverlayTrigger>
         < ResponsiveContainer width="100%" height="100%">
             <AreaChart
                 width={200}
@@ -108,11 +118,11 @@ const Predictor = () => {
                     </linearGradient>
                 </defs> */}
                 <XAxis dataKey="name" />
-                <CartesianGrid strokeDasharray="5 5" />
+                {/* <CartesianGrid strokeDasharray="5 5" /> */}
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="uv" stroke="#04ABFE" fill="#04ABFE" />
-                <Area type="monotone" dataKey="pv" stroke="#73D7FA" fill="#73D7FA" />
+                <Area type="monotone" dataKey="uv" stroke="#627aa4" fill="#627aa4" />
+                <Area type="monotone" dataKey="pv" stroke="#eb8c9c" fill="#eb8c9c" />
             </AreaChart>
         </ResponsiveContainer>
     </div>
