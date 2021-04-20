@@ -18,3 +18,11 @@
     padding-bottom: 2.5rem;    /* Footer height */
   }
 }
+
+.signin-container{
+  height: 100vh;
+}
+
+.App{
+  height:100vh;
+}

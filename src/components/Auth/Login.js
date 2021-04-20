@@ -40,15 +40,15 @@ const Login = () => {
   }
 
   return <div className="form-div">
-    <div className="form-card col-10 col-sm-7 col-md-8 col-lg-11">
-      <div className="form-title col-10 col-sm-6 col-md-11">Social Sprout</div>
-      <hr style={{ outline: "none", border: "none", backgroundColor: "black", height: 0.5, width: "50%" }} />
+    <div className="form-card">
+      <div className="form-title">Social Sprout</div>
+      <hr className="container mt-2" style={{ outline: "none", border: "none", backgroundColor: "black", height: 0.5, width: "50%" }} />
       <div className="d-flex mt-5">
         {!isMobile && <div><img src={SignImg} style={{ width: 450, height: 350 }} /></div>}
-        <div className="form-info mx-2 col-md-6" style={isMobile ? { marginLeft: 0 } : { marginLeft: 40 }}>
+        <div className="form-info" style={isMobile ? { marginLeft: 0 } : { marginLeft: 50 }}>
           <div className="form-header">Log In</div>
           <div className="form-values mt-5">
-            <form className="d-flex flex-column col-10 col-sm-9 col-md-12">
+            <form className="d-flex flex-column">
               <div className="form-input">
                 <FontAwesomeIcon icon={faUser} size="1x" color="black" />
                 <input className="form-in ml-4" type="email" data-testid="email" placeholder="Enter Email-id" name="email" value={form.email} onChange={(e) => onChange(e)} />
@@ -63,8 +63,8 @@ const Login = () => {
                 {/* </Link> */}
               </div>
             </form>
-            <div className="mt-4 form-link col-10 col-md-12">
-              <Link style={{ color: "black", textDecoration: "underline" }} to="/login">Don't have an account? Click here to create one!</Link>
+            <div className="mt-4 form-link">
+              <Link style={{ color: "black", textDecoration: "underline" }} to="/signup">Don't have an account? Click here to create one!</Link>
             </div>
           </div>
         </div>
