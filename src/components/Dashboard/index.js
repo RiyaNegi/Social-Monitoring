@@ -5,8 +5,14 @@ import Sentiment from "./Sentiment"
 import WordCloud from "./WordCloud"
 import Mention from "./Mention"
 import Predictor from "./Predictor"
+import { useContext } from 'react';
+import { GlobalContext } from "../../context/Provider"
+
+
 
 const Dashboard = () => {
+  const { authState: { auth } } = useContext(GlobalContext)
+  console.log("state:", auth && auth.loggedIn)
   return <div className="dashboard-body">
     <div className="card-bodyTop">
       <div className="card m-2 p-3 body-radius  one">

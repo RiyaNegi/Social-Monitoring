@@ -28,6 +28,7 @@ const auth = (state, { payload, type }) => {
           ...state.auth,
           loading: false,
           data: payload,
+          loggedIn: true
         },
       };
 

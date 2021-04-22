@@ -3,12 +3,12 @@
     color: inherit;
   } */
 .link{
-    color: rgb(219, 219, 219);
+    color: rgb(207, 207, 207);
     text-decoration:none;
-    font-family: 'Roboto Slab', serif;
-
+    margin-top: 10px;
+    cursor: pointer;
 }
-a:hover{
+.link:hover{
     color:gray !important;
     text-decoration:none !important;
 }

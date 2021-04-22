@@ -6,15 +6,19 @@ import App from './App';
 import Routes from "./routes";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bulma/css/bulma.min.css';
+import { GlobalProvider } from "./context/Provider"
+
 
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Route>
-      <Switch>
-        <Routes />
-      </Switch>
-    </Route>
-  </BrowserRouter>,
+  <GlobalProvider>
+    <BrowserRouter>
+      <Route>
+        <Switch>
+          <Routes />
+        </Switch>
+      </Route>
+    </BrowserRouter>
+  </GlobalProvider>,
   document.getElementById('root')
 );
