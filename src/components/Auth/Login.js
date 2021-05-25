@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react"
 import { GlobalContext } from "../../context/Provider"
 import { login } from "../../context/actions/auth";
+import wave from "../../assets/wave3.png"
 
 
 
@@ -40,6 +41,7 @@ const Login = () => {
   }
 
   return <div className="form-div">
+    <div className="wave"><img src={wave} style={{ width: 1550, height: 790 }} /></div>
     <div className="form-card">
       <div className="form-title">Social Sprout</div>
       <hr className="container mt-2" style={{ outline: "none", border: "none", backgroundColor: "black", height: 0.5, width: "50%" }} />

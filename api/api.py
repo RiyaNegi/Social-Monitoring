@@ -1,9 +1,11 @@
 
-from flask import Flask, render_template
-from flask_socketio import SocketIO, send
+from flask import Flask, render_template, request
+from flask_socketio import SocketIO, send, emit
 from flask_jwt import JWT, jwt_required, current_identity
 from werkzeug.security import safe_str_cmp
 from flask_cors import CORS, cross_origin
+import time
+
 
 
 app = Flask(__name__)
@@ -14,12 +16,17 @@ CORS(app, support_credentials=True)
 socketIo = SocketIO(app, cors_allowed_origins="*")
 app.debug = True
 
-@socketIo.on("message")
-def handleMessage(msg):
-    print(msg)
-    send(msg, broadcast=True)
-    return None
+app.host='localhost'
 
+
+@socketIo.on("getTime")
+def getTime():
+    for i in range(0,5):
+        print("TIMEEEEE @@@",i)
+        time.sleep(3)
+        emit("getTime", i, broadcast=True)
+    return None
+    
 
 @app.route('/api', methods=['GET'])
 def api():
@@ -67,7 +74,13 @@ jwt = JWT(app, authenticate, identity)
 @jwt_required()
 def protected():
     return '%s' % current_identity
-    
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    form = request.json
+    print("form :", form)
+    return 'OK'
+
 @app.after_request
 def after_request(response):
   response.headers.add('Access-Control-Allow-Origin', '*')

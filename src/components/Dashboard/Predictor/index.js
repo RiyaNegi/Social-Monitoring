@@ -5,43 +5,43 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 const data = [
     {
         name: '1st Jan',
-        low: 5,
-        high: 2,
+        low: 1,
+        high: 5,
         amt: 2,
     },
     {
         name: '2nd Jan',
         low: 2,
-        high: 5,
+        high: 1,
         amt: 2,
     },
     {
         name: '3rd Jan',
-        low: 9,
+        low: 5,
         high: 7,
         amt: 2,
     },
     {
         name: '4th Jan',
-        low: 1,
+        low: 10,
         high: 3,
         amt: 2,
     },
     {
         name: '5th Jan',
-        low: 5,
-        high: 9,
+        low: 2,
+        high: 10,
         amt: 2,
     },
     {
         name: '6th Jan',
         low: 1,
-        high: 3,
+        high: 4,
         amt: 2,
     },
     {
         name: '7th Jan',
-        low: 5,
+        low: 1,
         high: 4,
         amt: 2,
     }
@@ -85,8 +85,8 @@ const Predictor = () => {
                 {/* <CartesianGrid strokeDasharray="5 5" /> */}
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="low" stroke="#627aa4" fill="#627aa4" />
-                <Area type="monotone" dataKey="high" stroke="#eb8c9c" fill="#eb8c9c" />
+                <Area type="monotone" dataKey="low" stroke="#5E77FF" fill="#5E77FF" />
+                <Area type="monotone" dataKey="high" stroke="#C989EB" fill="#C989EB" />
             </AreaChart>
         </ResponsiveContainer>
     </div>

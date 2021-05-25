@@ -111,15 +111,15 @@ const Index = () => {
             >
                 <defs>
                     <linearGradient id="colortotal" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#8cafeb" stopOpacity={0.8} />
-                        <stop offset="95%" stopColor="#8cafeb" stopOpacity={0} />
+                        <stop offset="5%" stopColor="#5E77FF" stopOpacity={0.8} />
+                        <stop offset="95%" stopColor="#5E77FF" stopOpacity={0} />
                     </linearGradient>
                 </defs>
                 {/* <CartesianGrid strokeDasharray="5 5" /> */}
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="total" stroke="#8cafeb" fillOpacity={1} fill="url(#colortotal)" />
+                <Area type="monotone" dataKey="total" stroke="#5E77FF" fillOpacity={1} fill="url(#colortotal)" />
             </AreaChart>
         </ResponsiveContainer>
     </div >

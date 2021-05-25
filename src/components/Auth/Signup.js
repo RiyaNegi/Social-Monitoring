@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Auth.css"
-import signup from "../../assets/signup.png"
+import signupImg from "../../assets/signup.png"
 import { Form, Button } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,9 @@ import { useEffect, useState, useContext } from "react"
 import { GlobalContext } from "../../context/Provider"
 // import { signup } from "../../context/actions/auth";
 import CreatableSelect from 'react-select/creatable';
+import wave from "../../assets/wave3.png"
+import { signup } from "../../context/actions/auth";
+
 
 
 
@@ -16,6 +19,8 @@ const Signup = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
     const [form, setForm] = useState({
         email: "",
+        brand: "",
+        keywords: "",
         password: ""
     })
 
@@ -37,13 +42,15 @@ const Signup = () => {
 
     const submit = (e) => {
         e.preventDefault();
-        // login(form)(authDispatch);
+        signup(form)(authDispatch);
     }
 
     const handleChange = (newValue, actionMeta) => {
         console.group('Value Changed');
         console.log(newValue);
-        console.log(`action: ${actionMeta.action}`);
+        let key = []
+        newValue.filter(a => key.push(a.value))
+        setForm({ ...form, keywords: key })
         console.groupEnd();
     };
 
@@ -68,11 +75,12 @@ const Signup = () => {
     }
 
     return <div className="form-div">
+        <div className="wave"><img src={wave} style={{ width: 1550, height: 790 }} /></div>
         <div className="form-card">
             <div className="form-title">Social Sprout</div>
             <hr className="container mt-2" style={{ outline: "none", border: "none", backgroundColor: "black", height: 0.5, width: "50%" }} />
             <div className="d-flex">
-                {!isMobile && <div className="signup-img"><img src={signup} style={{ width: 400, height: 400 }} /></div>}
+                {!isMobile && <div className="signup-img"><img src={signupImg} style={{ width: 400, height: 400 }} /></div>}
                 <div className="form-info" style={isMobile ? { marginLeft: 0 } : { marginLeft: 50 }}>
                     <div className="form-header">Sign up</div>
                     <div className="form-values">

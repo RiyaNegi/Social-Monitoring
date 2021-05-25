@@ -7,13 +7,15 @@ import Mention from "./Mention"
 import Predictor from "./Predictor"
 import { useContext } from 'react';
 import { GlobalContext } from "../../context/Provider"
+import Socket from "../../Socket"
 
 
 
 const Dashboard = () => {
-  const { authState: { auth } } = useContext(GlobalContext)
+  const { authState: { auth }, time } = useContext(GlobalContext)
   console.log("state:", auth && auth.loggedIn)
   return <div className="dashboard-body">
+    <div>Time : {time}</div>
     <div className="card-bodyTop">
       <div className="card m-2 p-3 body-radius  one">
         <Predictor />

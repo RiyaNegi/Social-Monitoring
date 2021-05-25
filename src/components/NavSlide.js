@@ -17,7 +17,7 @@ const NavSlide = () => {
         <div className="link" onClick={() => handleLogout()}>Profile</div>
       </Nav>
     </Navbar>
-    <div style={{ background: "linear-gradient(90deg, rgba(141,208,244,1) 37%, rgba(255,126,159,1) 94%)", height: 5 }}></div>
+    <div style={{ background: "linear-gradient(128deg, rgba(86,102,254,1) 26%, rgba(222,107,207,1) 54%)", height: 5 }}></div>
   </div>
 }
 

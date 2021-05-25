@@ -262,7 +262,7 @@ const Index = () => {
             <ReactWordcloud words={words} options={{
                 fontFamily: 'Georgia, serif',
                 fontSizes: [20, 50],
-                colors: ['#8cafeb', '#627aa4', '#eb8c9c', '#a4626d', '#7d6e62', '#be8e96']
+                colors: ['#5E77FF', '#A7B4FF', '#D5DBFD', '#C35BB1', '#6B64F7', '#be8e96']
             }} />
         </div>
     </div>

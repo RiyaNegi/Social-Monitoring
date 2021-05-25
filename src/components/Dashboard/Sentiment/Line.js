@@ -64,8 +64,8 @@ const Linegraph = () => {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="negative" stroke="#eb8c9c" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="postive" stroke="#8cafeb" />
+            <Line type="monotone" dataKey="negative" stroke="#6B64F7" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="postive" stroke="#C35BB1" />
         </LineChart>
     </ResponsiveContainer>
 }

@@ -7,7 +7,7 @@ const data = [
     { name: 'Negative', value: 100 },
 ];
 
-const COLORS = ['#8cafeb', '#627aa4', '#eb8c9c'];
+const COLORS = ['#5E77FF', '#A7B4FF', '#D5DBFD'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {

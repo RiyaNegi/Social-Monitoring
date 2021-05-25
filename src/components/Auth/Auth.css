@@ -4,6 +4,7 @@
     align-items: center;
     height: 100%;
 }
+
 .form-title{
     display: flex;
     justify-content: center;
@@ -16,6 +17,7 @@
     width:350px;
 }
 .form-card{
+    z-index: 10;
     background-color: #ffffff;
     width:fit-content;
     height:fit-content;
@@ -75,4 +77,9 @@
 }
 .signup-img{
     margin-top: 50px;
+}
+
+.wave{
+    position: absolute;
+    z-index: 0;
 }
