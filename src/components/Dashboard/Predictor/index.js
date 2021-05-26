@@ -1,53 +1,23 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import Tooltipp from 'react-bootstrap/Tooltip'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-const data = [
-    {
-        name: '1st Jan',
-        low: 1,
-        high: 5,
-        amt: 2,
-    },
-    {
-        name: '2nd Jan',
-        low: 2,
-        high: 1,
-        amt: 2,
-    },
-    {
-        name: '3rd Jan',
-        low: 5,
-        high: 7,
-        amt: 2,
-    },
-    {
-        name: '4th Jan',
-        low: 10,
-        high: 3,
-        amt: 2,
-    },
-    {
-        name: '5th Jan',
-        low: 2,
-        high: 10,
-        amt: 2,
-    },
-    {
-        name: '6th Jan',
-        low: 1,
-        high: 4,
-        amt: 2,
-    },
-    {
-        name: '7th Jan',
-        low: 1,
-        high: 4,
-        amt: 2,
-    }
-];
+import { outreach } from "../../../context/actions/dashboard"
+import { GlobalContext } from "../../../context/Provider"
+
 
 const Predictor = () => {
+    const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
+
+    useEffect(() => {
+        outreach(dashboardDispatch)
+    }, [])
+
+    console.log("outreach data->", dashboardState)
+
+
+    const data = dashboardState.outreachData
+
     return <div style={{ width: 700, height: 260 }}>
         <OverlayTrigger
             placement={'right'}

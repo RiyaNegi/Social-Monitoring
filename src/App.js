@@ -10,8 +10,8 @@ import isAuthenticated from "./utils/isAuthenticated"
 
 function App(props) {
   const { authState: { auth } } = useContext(GlobalContext)
-  console.log("state:", auth && auth.loggedIn)
-  console.log("login status:", isAuthenticated())
+  // console.log("state:", auth && auth.loggedIn)
+  // console.log("login status:", isAuthenticated())
 
   return (
     <div className="App">

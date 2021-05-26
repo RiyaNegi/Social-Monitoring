@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import "../Dashboard.css"
-import { Data } from './Data';
+// import { Data } from './Data';
 import BuzzBody from './BuzzBody';
 import browser from "../../../assets/browser.png"
 import youtube from "../../../assets/youtube.png"
@@ -9,6 +9,8 @@ import google from "../../../assets/google.png"
 import twitter from "../../../assets/twitter.png"
 import Tooltip from 'react-bootstrap/Tooltip'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import { buzz } from "../../../context/actions/dashboard"
+import { GlobalContext } from "../../../context/Provider"
 
 
 export default function Index() {
@@ -17,6 +19,16 @@ export default function Index() {
   const handleActiveClick = value => {
     setActive(value);
   };
+
+  const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
+
+  useEffect(() => {
+    buzz(dashboardDispatch)
+  }, [])
+
+  console.log("buzz data->", dashboardState.buzzData)
+
+  const Data = dashboardState.buzzData
 
   return (
     <div className="buzz">

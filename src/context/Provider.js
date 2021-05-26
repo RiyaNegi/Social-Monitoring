@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useState, useEffect } from "react";
 import auth from "./reducers/auth";
-import { authInitial } from "./InitialState"
+import dashboard from "./reducers/dashboard";
+import { authInitial, dashboardInitial } from "./InitialState"
 import io from "socket.io-client";
 
 let endPoint = "http://localhost:5000";
@@ -10,21 +11,21 @@ export const GlobalContext = createContext({});
 
 export const GlobalProvider = ({ children }) => {
     const [authState, authDispatch] = useReducer(auth, authInitial);
+    const [dashboardState, dashboardDispatch] = useReducer(dashboard, dashboardInitial);
+
     const [time, setTime] = useState(1)
 
     const getTime = () => {
-        console.log("here")
         socket.emit("getTime")
         socket.on("getTime", timenew => {
             setTime(timenew);
-            console.log("get time was called ->", timenew)
+            // console.log("get time was called ->", timenew)
         });
     };
 
-    useEffect(() => {
-        getTime();
-    }, []);
-
+    // useEffect(() => {
+    //     getTime();
+    // }, []);
 
 
     return (
@@ -32,7 +33,9 @@ export const GlobalProvider = ({ children }) => {
             value={{
                 authState,
                 authDispatch,
-                time: time
+                time: time,
+                dashboardState,
+                dashboardDispatch
             }}
         >
             {children}

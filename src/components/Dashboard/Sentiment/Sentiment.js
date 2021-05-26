@@ -1,12 +1,6 @@
 import React from 'react'
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 
-const data = [
-    { name: 'Neutral', value: 600 },
-    { name: 'Positive', value: 300 },
-    { name: 'Negative', value: 100 },
-];
-
 const COLORS = ['#5E77FF', '#A7B4FF', '#D5DBFD'];
 
 const RADIAN = Math.PI / 180;
@@ -22,7 +16,9 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     );
 };
 
-const Sentiment = () => {
+const Sentiment = (pieData) => {
+    console.log("Pie data", pieData.pieData)
+    const data = pieData.pieData
     return < ResponsiveContainer width="100%" height="100%">
         <PieChart width={100} height={100}>
             <Pie

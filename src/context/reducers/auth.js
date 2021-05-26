@@ -2,7 +2,7 @@ import {
   REGISTER_LOADING,
   REGISTER_SUCCESS,
   REGISTER_ERROR,
-  LOGIN_LOADING,
+  LOADING,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
 } from "../../helpers/constants";
@@ -10,7 +10,7 @@ import {
 const auth = (state, { payload, type }) => {
   switch (type) {
     case REGISTER_LOADING:
-    case LOGIN_LOADING:
+    case LOADING:
       return {
         ...state,
         auth: {

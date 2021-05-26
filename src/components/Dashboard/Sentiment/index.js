@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import Sentiment from "./Sentiment"
 import Line from "./Line"
 import Tooltip from 'react-bootstrap/Tooltip'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import { sentiment } from "../../../context/actions/dashboard"
+import { GlobalContext } from "../../../context/Provider"
+
 
 const Index = () => {
+
+    const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
+
+    useEffect(() => {
+        sentiment(dashboardDispatch)
+    }, [])
+
+    console.log("sentiment data->", dashboardState)
+
     return <div className="d-flex flex-column px-3" >
         <OverlayTrigger
             placement={'right'}
@@ -17,10 +29,10 @@ const Index = () => {
         </OverlayTrigger>
         <div className="d-flex">
             <div style={{ width: 195, height: 260 }}>
-                <Sentiment />
+                <Sentiment pieData={dashboardState.sentimentData.pie} />
             </div>
             <div style={{ width: 520, height: 260 }}>
-                <Line />
+                <Line lineData={dashboardState.sentimentData.line} />
             </div>
         </div>
 

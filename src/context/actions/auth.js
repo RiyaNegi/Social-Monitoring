@@ -1,10 +1,7 @@
-import axios from "axios";
 import {
-  LOGIN_LOADING,
+  LOADING,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
-  LOGOUT_SUCCESS,
-  LOGOUT_ERROR
 } from "../../helpers/constants";
 import History from "../../utils/history";
 import AxiosInstance from "../../helpers/AxiosInstance"
@@ -13,14 +10,9 @@ import AxiosInstance from "../../helpers/AxiosInstance"
 
 export const login = ({ email, password }) => (dispatch) => {
   dispatch({
-    type: LOGIN_LOADING,
+    type: LOADING,
   });
-  const options = {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    }
-  };
+
   console.log(email, password)
 
   AxiosInstance.post("/auth", JSON.stringify({
@@ -54,7 +46,7 @@ export const logout = () => {
 
 export const signup = ({ email, brand, keywords, password }) => (dispatch) => {
   dispatch({
-    type: LOGIN_LOADING,
+    type: LOADING,
   });
 
   AxiosInstance.post("/signup", JSON.stringify({

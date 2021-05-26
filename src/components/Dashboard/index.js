@@ -13,7 +13,7 @@ import Socket from "../../Socket"
 
 const Dashboard = () => {
   const { authState: { auth }, time } = useContext(GlobalContext)
-  console.log("state:", auth && auth.loggedIn)
+  // console.log("state:", auth && auth.loggedIn)
   return <div className="dashboard-body">
     <div>Time : {time}</div>
     <div className="card-bodyTop">
