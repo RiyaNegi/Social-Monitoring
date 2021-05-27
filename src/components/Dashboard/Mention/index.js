@@ -8,11 +8,7 @@ import { GlobalContext } from "../../../context/Provider"
 
 
 const Index = () => {
-    const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
-
-    useEffect(() => {
-        totalMentions(dashboardDispatch)
-    }, [])
+    const { dashboardState } = useContext(GlobalContext);
 
     const data = dashboardState.mentionsData
 

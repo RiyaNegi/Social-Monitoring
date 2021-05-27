@@ -20,11 +20,7 @@ export default function Index() {
     setActive(value);
   };
 
-  const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
-
-  useEffect(() => {
-    buzz(dashboardDispatch)
-  }, [])
+  const { dashboardState } = useContext(GlobalContext);
 
   console.log("buzz data->", dashboardState.buzzData)
 

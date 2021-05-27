@@ -9,13 +9,7 @@ import { GlobalContext } from "../../../context/Provider"
 
 const Index = () => {
 
-    const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
-
-    useEffect(() => {
-        sentiment(dashboardDispatch)
-    }, [])
-
-    console.log("sentiment data->", dashboardState)
+    const { dashboardState } = useContext(GlobalContext);
 
     return <div className="d-flex flex-column px-3" >
         <OverlayTrigger

@@ -7,11 +7,7 @@ import { GlobalContext } from "../../../context/Provider"
 
 
 const Predictor = () => {
-    const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
-
-    useEffect(() => {
-        outreach(dashboardDispatch)
-    }, [])
+    const { dashboardState } = useContext(GlobalContext);
 
     console.log("outreach data->", dashboardState)
 

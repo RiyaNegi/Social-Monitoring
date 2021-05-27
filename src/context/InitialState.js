@@ -10,5 +10,6 @@ export const dashboardInitial = {
     },
     buzzData: [],
     wordCloudData: [],
-    mentionsData: []
+    mentionsData: [],
+    isloading: false
 };

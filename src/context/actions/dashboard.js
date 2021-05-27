@@ -1,4 +1,4 @@
-import AxiosInstance from "../../helpers/AxiosInstance"
+import { AxiosInstance } from "../../helpers/AxiosInstance"
 import {
     LOADING,
     LOGIN_ERROR,
@@ -18,10 +18,13 @@ export const outreach = (dispatch) => {
     AxiosInstance.get("/outreach")
         .then((res) => {
             console.log("succcesss bitccchh!!!", res)
-            dispatch({
-                type: OUTREACH_SUCCESS,
-                payload: res,
-            });
+            setTimeout(function () {
+                dispatch({
+                    type: OUTREACH_SUCCESS,
+                    payload: res,
+                });
+            }, 11000);
+
         })
         .catch((err) => {
             console.log("error!!!", err)
@@ -33,17 +36,20 @@ export const outreach = (dispatch) => {
 }
 
 export const sentiment = (dispatch) => {
-    dispatch({
-        type: LOADING,
-    });
+    // dispatch({
+    //     type: LOADING,
+    // });
 
     AxiosInstance.get("/sentiment")
         .then((res) => {
             console.log("succcesss bitccchh!!!", res)
-            dispatch({
-                type: SENTIMENT_SUCCESS,
-                payload: res,
-            });
+            setTimeout(function () {
+                dispatch({
+                    type: SENTIMENT_SUCCESS,
+                    payload: res,
+                })
+            }, 15000);
+
         })
         .catch((err) => {
             console.log("error!!!", err)
@@ -55,17 +61,20 @@ export const sentiment = (dispatch) => {
 }
 
 export const buzz = (dispatch) => {
-    dispatch({
-        type: LOADING,
-    });
+    // dispatch({
+    //     type: LOADING,
+    // });
 
     AxiosInstance.get("/buzz")
         .then((res) => {
             console.log("succcesss bitccchh!!!", res)
-            dispatch({
-                type: BUZZ_SUCCESS,
-                payload: res,
-            });
+            setTimeout(function () {
+                dispatch({
+                    type: BUZZ_SUCCESS,
+                    payload: res,
+                });
+            }, 5000)
+
         })
         .catch((err) => {
             console.log("error!!!", err)
@@ -77,16 +86,19 @@ export const buzz = (dispatch) => {
 }
 
 export const wordCloud = (dispatch) => {
-    dispatch({
-        type: LOADING,
-    });
+    // dispatch({
+    //     type: LOADING,
+    // });
     AxiosInstance.get("/wordCloud")
         .then((res) => {
             console.log("succcesss bitccchh!!!", res)
-            dispatch({
-                type: WORDLCLOUD_SUCCESS,
-                payload: res,
-            });
+            setTimeout(function () {
+                dispatch({
+                    type: WORDLCLOUD_SUCCESS,
+                    payload: res,
+                });
+            }, 12000)
+
         })
         .catch((err) => {
             console.log("error!!!", err)
@@ -98,17 +110,19 @@ export const wordCloud = (dispatch) => {
 }
 
 export const totalMentions = (dispatch) => {
-    dispatch({
-        type: LOADING,
-    });
+    // dispatch({
+    //     type: LOADING,
+    // });
 
     AxiosInstance.get("/totalMentions")
         .then((res) => {
             console.log("succcesss bitccchh!!!", res)
-            dispatch({
-                type: MENTIONS_SUCCESS,
-                payload: res,
-            });
+            setTimeout(function () {
+                dispatch({
+                    type: MENTIONS_SUCCESS,
+                    payload: res,
+                });
+            }, 14000)
         })
         .catch((err) => {
             console.log("error!!!", err)

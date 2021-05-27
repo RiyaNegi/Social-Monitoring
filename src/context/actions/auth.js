@@ -4,7 +4,7 @@ import {
   LOGIN_ERROR,
 } from "../../helpers/constants";
 import History from "../../utils/history";
-import AxiosInstance from "../../helpers/AxiosInstance"
+import { AuthAxios } from "../../helpers/AxiosInstance"
 
 
 
@@ -15,7 +15,7 @@ export const login = ({ email, password }) => (dispatch) => {
 
   console.log(email, password)
 
-  AxiosInstance.post("/auth", JSON.stringify({
+  AuthAxios.post("/auth", JSON.stringify({
     username: email,
     password: password
   }))
@@ -49,7 +49,7 @@ export const signup = ({ email, brand, keywords, password }) => (dispatch) => {
     type: LOADING,
   });
 
-  AxiosInstance.post("/signup", JSON.stringify({
+  AuthAxios.post("/signup", JSON.stringify({
     username: email,
     brand: brand,
     keywords: keywords,

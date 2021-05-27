@@ -4,43 +4,50 @@ import {
   SENTIMENT_SUCCESS,
   BUZZ_SUCCESS,
   WORDLCLOUD_SUCCESS,
-  MENTIONS_SUCCESS
+  MENTIONS_SUCCESS,
+  LOADING
 } from "../../helpers/constants";
 
 const dashboard = (state, { payload, type }) => {
   switch (type) {
     case OUTREACH_SUCCESS:
-      console.log("State check!!:", state)
       return {
         ...state,
-        outreachData: payload.data
+        outreachData: payload.data,
+        isloading: false
       }
     case SENTIMENT_SUCCESS:
-      console.log("State check!!:", state)
       return {
         ...state,
         sentimentData: {
           line: payload.data.line,
-          pie: payload.data.pie
+          pie: payload.data.pie,
+          isloading: false
         }
       }
     case BUZZ_SUCCESS:
-      console.log("State check!!:", state)
       return {
         ...state,
-        buzzData: payload.data
+        buzzData: payload.data,
+        isloading: false
       }
     case WORDLCLOUD_SUCCESS:
-      console.log("State check!!:", state)
       return {
         ...state,
-        wordCloudData: payload.data
+        wordCloudData: payload.data,
+        isloading: false
       }
     case MENTIONS_SUCCESS:
-      console.log("State check!!:", state)
       return {
         ...state,
-        mentionsData: payload.data
+        mentionsData: payload.data,
+        isloading: false
+      }
+    case LOADING:
+      console.log("LOADING DATA!:", state)
+      return {
+        ...state,
+        isloading: true
       }
     case ERROR:
       return {

@@ -7,11 +7,7 @@ import { GlobalContext } from "../../../context/Provider"
 
 const Index = () => {
 
-    const { dashboardDispatch, dashboardState } = useContext(GlobalContext);
-
-    useEffect(() => {
-        wordCloud(dashboardDispatch)
-    }, [])
+    const { dashboardState } = useContext(GlobalContext);
 
     console.log("Word Cloud data->", dashboardState.buzzData)
 
