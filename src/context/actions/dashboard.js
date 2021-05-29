@@ -1,4 +1,4 @@
-import { AxiosInstance } from "../../helpers/AxiosInstance"
+import AxiosInstance from "../../helpers/AxiosInstance"
 import {
     LOADING,
     LOGIN_ERROR,

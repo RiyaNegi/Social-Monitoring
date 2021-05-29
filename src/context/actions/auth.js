@@ -4,15 +4,11 @@ import {
   LOGIN_ERROR,
 } from "../../helpers/constants";
 import History from "../../utils/history";
-import { AuthAxios } from "../../helpers/AxiosInstance"
+import { AuthAxios } from "../../helpers/AuthAxios"
 
 
 
 export const login = ({ email, password }) => (dispatch) => {
-  dispatch({
-    type: LOADING,
-  });
-
   console.log(email, password)
 
   AuthAxios.post("/auth", JSON.stringify({

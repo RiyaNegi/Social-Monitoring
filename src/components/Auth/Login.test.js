@@ -13,9 +13,7 @@ test('renders login page', () => {
 
     expect(headerText).toBeInTheDocument();
     expect(formHeading).toBeInTheDocument();
-    fireEvent.change(input, { target: { value: "riyanegi221b@gmail.com" } })
-    fireEvent.change(inputPswd, { target: { value: "Test@123" } })
+    fireEvent.change(input, { target: { value: "riyanegi" } })
+    fireEvent.change(inputPswd, { target: { value: "riya" } })
     fireEvent.click(screen.getByRole('button', { name: 'Login' }));
-
-
 });
