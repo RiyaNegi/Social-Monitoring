@@ -3,6 +3,9 @@ import youtube from "../../../assets/youtube.png"
 import reddit from "../../../assets/reddit.png"
 import google from "../../../assets/google.png"
 import twitter from "../../../assets/twitter.png"
+import upvote from "../../../assets/upvote.png"
+
+import "./Buzz.css"
 
 export default function BuzzBody({ data }) {
     const imgHandler = value => {
@@ -17,12 +20,18 @@ export default function BuzzBody({ data }) {
     };
     return (
         <a className="panel-block All" href={data.link}>
-            <div className="flex-column">
-                <div className="d-flex ml-2 font-weight-bold">
-                    <div ><img src={imgHandler(data.media)} style={{ height: 20, width: 20, borderRadius: "60%" }} /></div>
-                    <span className="ml-2">{data.media}</span>
+            <div className="buzzcard">
+                <div className="flex-column">
+                    <div className="d-flex ml-2 font-weight-bold">
+                        <div ><img src={imgHandler(data.media)} style={{ height: 20, width: 20, borderRadius: "60%" }} /></div>
+                        <span className="ml-2">{data.media}</span>
+                    </div>
+                    <div className="ml-2" style={{ width: 520 }}>{data.title}</div>
                 </div>
-                <div className="ml-2" style={{ width: 520 }}>{data.title}</div>
+                <div className="flex-column">
+                    <div><img src={upvote} style={{ height: 20, width: 20, borderRadius: "60%" }} /></div>
+                    <div>23</div>
+                </div>
             </div>
         </a>
     );

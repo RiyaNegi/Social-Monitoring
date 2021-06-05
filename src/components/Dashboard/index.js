@@ -10,21 +10,26 @@ import { GlobalContext } from "../../context/Provider"
 import Socket from "../../Socket"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import { outreach, totalMentions, buzz, sentiment, wordCloud } from '../../context/actions/dashboard'
+import { outreach, totalMentions, buzz, sentiment, wordCloud, identity } from '../../context/actions/dashboard'
 import TestAxios from "../test/TestAxios"
 
 
 const Dashboard = () => {
   const { time, dashboardDispatch, dashboardState } = useContext(GlobalContext)
-  // console.log("state:", auth && auth.loggedIn)
+  console.log("identity:", dashboardState.identity)
 
   useEffect(() => {
-    outreach(dashboardDispatch)
-    sentiment(dashboardDispatch)
-    buzz(dashboardDispatch)
-    wordCloud(dashboardDispatch)
-    totalMentions(dashboardDispatch)
+    identity(dashboardDispatch)
   }, [])
+
+  useEffect(() => {
+    console.log("calling outreachhh")
+    outreach(dashboardState.identity)(dashboardDispatch)
+    sentiment(dashboardState.identity)(dashboardDispatch)
+    buzz(dashboardState.identity)(dashboardDispatch)
+    wordCloud(dashboardState.identity)(dashboardDispatch)
+    totalMentions(dashboardState.identity)(dashboardDispatch)
+  }, [dashboardDispatch, dashboardState.identity])
 
   return <div className="dashboard-body">
     <div>Time : {time}</div>

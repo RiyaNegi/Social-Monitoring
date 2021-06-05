@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO, send, emit
 from flask_jwt import JWT, jwt_required, current_identity
 from werkzeug.security import safe_str_cmp
@@ -56,6 +56,7 @@ userid_table = {u.id: u for u in users}
 def authenticate(username, password):
     user = username_table.get(username, None)
     if user and safe_str_cmp(user.password.encode('utf-8'), password.encode('utf-8')):
+        print("user",user)
         return user
 
 def identity(payload):
@@ -65,8 +66,7 @@ def identity(payload):
 @app.route('/', methods=['GET','POST', 'OPTIONS'])
 @cross_origin(supports_credentials=True)
 def index():
-    return render_template("../public/index.html")
-
+    return 'OK'
 
 jwt = JWT(app, authenticate, identity)
 
@@ -81,13 +81,20 @@ def signup():
     print("form :", form)
     return 'OK'
 
+
+@app.route('/outreach', methods=['GET'])
+def outreach():
+    user_id = request.args.get('user')
+    print("user ID :", user_id)
+    return 'OK'
+
 @app.after_request
 def after_request(response):
   response.headers.add('Access-Control-Allow-Origin', '*')
   response.headers.add('Access-Control-Allow-Credentials', 'true')
-  response.headers.add('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Authorization')
+  response.headers.add('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Authorization, userid')
   response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
   return response
 
 if __name__ == '__main__':
-    socketIo.run(app)
+    app.run()

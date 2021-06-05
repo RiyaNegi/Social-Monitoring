@@ -12,5 +12,6 @@ export const dashboardInitial = {
     buzzData: [],
     wordCloudData: [],
     mentionsData: [],
-    isloading: false
+    isloading: false,
+    identity: []
 };

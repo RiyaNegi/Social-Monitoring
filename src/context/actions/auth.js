@@ -16,6 +16,7 @@ export const login = ({ email, password }) => (dispatch) => {
     password: password
   }))
     .then((res) => {
+      console.log("response login", res)
       localStorage.setItem('token', res.data.access_token)
       dispatch({
         type: LOGIN_SUCCESS,

@@ -20,7 +20,17 @@ const renderWithContext = (
 
 
 test('renders login page', () => {
-    render(<BrowserRouter>
+    renderWithContext(<BrowserRouter>
+        <Login authState={{ error: "" }} />
+    </BrowserRouter>);
+    const headerText = screen.getByText("Social Sprout");
+    const formHeading = screen.getByText("Login");
+    expect(headerText).toBeInTheDocument();
+    expect(formHeading).toBeInTheDocument();
+});
+
+test('login page form cannot be submitted if any empty values', () => {
+    renderWithContext(<BrowserRouter>
         <Login />
     </BrowserRouter>);
     const headerText = screen.getByText("Social Sprout");
@@ -30,48 +40,6 @@ test('renders login page', () => {
 
     expect(headerText).toBeInTheDocument();
     expect(formHeading).toBeInTheDocument();
-    fireEvent.change(input, { target: { value: "riyanegi" } })
+    fireEvent.change(input, { target: { value: " " } })
     fireEvent.change(inputPswd, { target: { value: "riya" } })
-    // fireEvent.click(screen.getByRole('button', { name: 'Login' }));
 });
-
-// test('end to end test for succesful login action', async () => {
-//     const { getByTestId } = renderWithContext(<BrowserRouter>
-//         <Login />
-//     </BrowserRouter>);
-
-//     const formHeading = screen.getByText("Login");
-//     const input = screen.getByTestId("email")
-//     const inputPswd = screen.getByTestId("password")
-//     const warning = screen.getByTestId('warning')
-
-//     expect(formHeading).toBeInTheDocument();
-//     fireEvent.change(input, { target: { value: "riyanegi" } })
-//     fireEvent.change(inputPswd, { target: { value: "riya" } })
-//     fireEvent.click(screen.getByRole('button', { name: 'Login' }));
-//     // await expect(warning).toBeInTheDocument()
-//     await expect(getByTestId('warning')).toBeInTheDocument()
-// });
-
-
-// test('Integration test for login page to dashboard', () => {
-//     render(<BrowserRouter>
-//         <Login />
-//     </BrowserRouter>);
-//     const authState = { error: "Login failed. Wrong email or password" }
-//     const headerText = screen.getByText("Social Sprout");
-//     const formHeading = screen.getByText("Login");
-//     const input = screen.getByTestId("email")
-//     const inputPswd = screen.getByTestId("password")
-
-//     expect(headerText).toBeInTheDocument();
-//     expect(formHeading).toBeInTheDocument();
-//     fireEvent.change(input, { target: { value: "mike" } })
-//     fireEvent.change(inputPswd, { target: { value: "mike" } })
-//     // fireEvent.click(screen.getByRole('button', { name: 'Login' }));
-//     const { getByTestId } = render(<BrowserRouter>
-//         <Dashboard />
-//     </BrowserRouter>);
-//     expect(getByTestId('loader')).toHaveTextContent('Updating the Dashboard')
-
-// });

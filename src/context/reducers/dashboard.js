@@ -5,7 +5,8 @@ import {
   BUZZ_SUCCESS,
   WORDLCLOUD_SUCCESS,
   MENTIONS_SUCCESS,
-  LOADING
+  LOADING,
+  GET_IDENTITY
 } from "../../helpers/constants";
 
 const dashboard = (state, { payload, type }) => {
@@ -41,6 +42,12 @@ const dashboard = (state, { payload, type }) => {
       return {
         ...state,
         mentionsData: payload.data,
+        isloading: false
+      }
+    case GET_IDENTITY:
+      return {
+        ...state,
+        identity: payload.data,
         isloading: false
       }
     case LOADING:
