@@ -1,5 +1,6 @@
 export const authInitial = {
-    loggedIn: false
+    loggedIn: false,
+    error: ""
 };
 
 export const dashboardInitial = {

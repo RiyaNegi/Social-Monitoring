@@ -11,7 +11,7 @@ import Socket from "../../Socket"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { outreach, totalMentions, buzz, sentiment, wordCloud } from '../../context/actions/dashboard'
-
+import TestAxios from "../test/TestAxios"
 
 
 const Dashboard = () => {
@@ -32,7 +32,8 @@ const Dashboard = () => {
       dashboardState.sentimentData.pie.length !== 0 && dashboardState.buzzData.length !== 0 &&
       dashboardState.wordCloudData.length !== 0 && dashboardState.mentionsData.length !== 0)
       ? (<div data-testid="show-data">
-        <div className="card-bodyTop">
+        <div className="card-bodyTop" >
+          <p id="some-id">heelooo testttt</p>
           <div className="card m-2 p-3 body-radius  one" data-testid="outreach">
             <Predictor />
           </div>
@@ -58,14 +59,16 @@ const Dashboard = () => {
           <Loader
             type="Grid"
             color="#7B67F2"
-            height={200}
-            width={300}
+            height={150}
+            width={250}
           /></div>
         <div className="loadText mt-6" data-testid="loader"> Updating the Dashboard</div>
       </div>}
 
     {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
   </div>
+
+  // return <TestAxios />
 }
 
 export default Dashboard

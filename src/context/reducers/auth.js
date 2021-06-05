@@ -32,15 +32,11 @@ const auth = (state, { payload, type }) => {
         },
       };
 
-    case REGISTER_ERROR:
     case LOGIN_ERROR:
+      console.log("hey caleed@@")
       return {
         ...state,
-        auth: {
-          ...state.auth,
-          loading: false,
-          error: payload,
-        },
+        error: "Login failed. Wrong email or password",
       };
     default:
       return state;

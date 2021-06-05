@@ -23,9 +23,9 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
-    // useEffect(() => {
-    //     getTime();
-    // }, []);
+    useEffect(() => {
+        getTime();
+    }, []);
 
 
     return (

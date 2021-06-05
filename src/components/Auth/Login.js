@@ -9,6 +9,8 @@ import { useEffect, useState, useContext } from "react"
 import { GlobalContext } from "../../context/Provider"
 import { login } from "../../context/actions/auth";
 import wave from "../../assets/wave3.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -19,7 +21,17 @@ const Login = () => {
     password: ""
   })
 
-  const { authDispatch } = useContext(GlobalContext);
+  const notify = (warning) => toast.error(warning, {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+  const { authDispatch, authState } = useContext(GlobalContext);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -28,7 +40,14 @@ const Login = () => {
     }, false);
   }, [isMobile]);
 
+  useEffect(() => {
+    if (authState.error) {
+      notify(authState.error)
+    }
+  }, [authState.error])
+
   const onChange = (e) => {
+    authState.error = ""
     setForm({
       ...form,
       [e.target.name]: e.target.value
@@ -39,6 +58,8 @@ const Login = () => {
     e.preventDefault();
     login(form)(authDispatch);
   }
+
+  console.log("Error ->", authState.error)
 
   return <div className="form-div">
     <div className="wave"><img src={wave} style={{ width: 1550, height: 790 }} /></div>
@@ -60,9 +81,22 @@ const Login = () => {
                 <input className="form-in ml-4" type="password" data-testid="password" placeholder="Enter Password" name="password" value={form.password} onChange={(e) => onChange(e)} />
               </div>
               <div className="form-btn">
-                {/* <Link to="/dashboard"> */}
-                <button className="form-login mt-5 p-2" onClick={(e) => submit(e)} >Login</button>
+                { }
+                <button className="form-login mt-5 p-2" disabled={!form.email || !form.password} style={{ backgroundColor: !form.email || !form.password ? "#2d2d2d" : "black" }} onClick={(e) => submit(e)} >Login</button>
                 {/* </Link> */}
+                <div data-testid="warning">
+                  <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                  />
+                </div>
               </div>
             </form>
             <div className="mt-4 form-link">

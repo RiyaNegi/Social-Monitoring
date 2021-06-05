@@ -1,7 +1,5 @@
-import AxiosInstance from "../../helpers/AxiosInstance"
+import AxiosInstance from "../../helpers/AxiosInstance.js"
 import {
-    LOADING,
-    LOGIN_ERROR,
     OUTREACH_SUCCESS,
     ERROR,
     SENTIMENT_SUCCESS,
@@ -113,7 +111,6 @@ export const totalMentions = (dispatch) => {
     // dispatch({
     //     type: LOADING,
     // });
-
     AxiosInstance.get("/totalMentions")
         .then((res) => {
             console.log("succcesss bitccchh!!!", res)
