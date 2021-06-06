@@ -1,11 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Login from './Login';
-import { createMemoryHistory } from 'history'
 import { GlobalProvider, GlobalContext } from '../../context/Provider'
-import { useContext } from "react"
-import InitialState from "../../context/InitialState"
-import Dashboard from '../Dashboard';
 
 const renderWithContext = (
     component) => {

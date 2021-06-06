@@ -2,9 +2,6 @@ import './App.css';
 import NavSlide from './components/NavSlide'
 import { withRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Sockett from "./Socket"
-import { GlobalContext } from "./context/Provider"
-import { useContext } from 'react';
 import isAuthenticated from "./utils/isAuthenticated"
 
 
@@ -24,9 +21,10 @@ function App(props) {
         <div>
           {isAuthenticated() ? (<div> <NavSlide />
             {props.children}</div>) : props.history.push("/login")}
-
         </div>
       )}
+      <div className="home-footer">A project made with ❤️ by Riya Negi, Neel Gandhi  |  View source code</div>
+
     </div>
   );
 }
