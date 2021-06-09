@@ -22,7 +22,7 @@ const Index = () => {
         >
             <div className="card-title text-left">Word Cloud</div>
         </OverlayTrigger>
-        <div style={{ height: 270, width: 260 }}>
+        <div style={{ height: 250, width: 260 }}>
             <ReactWordcloud words={words} options={{
                 fontFamily: 'Georgia, serif',
                 fontSizes: [20, 50],

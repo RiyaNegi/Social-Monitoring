@@ -11,24 +11,102 @@ import {
 } from "../../helpers/constants";
 
 
-export const outreach = (user) => (dispatch) => {
+export const buzz = (user) => async (dispatch) => {
 	// dispatch({
 	//     type: LOADING,
 	// });
-	console.log("outreach function reached")
-	AxiosInstance.get("/outreach", {
+
+	await AxiosInstance.get("/buzz", {
 		params: {
 			user
 		}
 	})
 		.then((res) => {
-			console.log("succcesss bitccchh!!!", res)
-			setTimeout(function () {
-				dispatch({
-					type: OUTREACH_SUCCESS,
-					payload: res,
-				});
-			}, 11000);
+			dispatch({
+				type: BUZZ_SUCCESS,
+				payload: res,
+			});
+			console.log("buzz data is here so now next")
+			outreach(user)(dispatch)
+		})
+		.catch((err) => {
+			console.log("error!!!", err)
+			dispatch({
+				type: ERROR,
+				payload: err.response ? err.response.data : "COULD NOT CONNECT",
+			});
+		})
+}
+
+export const outreach = (user) => async (dispatch) => {
+	// dispatch({
+	//     type: LOADING,
+	// });
+	await AxiosInstance.get("/outreach", {
+		params: {
+			user
+		}
+	})
+		.then((res) => {
+			dispatch({
+				type: OUTREACH_SUCCESS,
+				payload: res,
+			});
+			console.log("outreach data is here so now next")
+			sentiment(user)(dispatch)
+			wordCloud(user)(dispatch)
+			totalMentions(user)(dispatch)
+		})
+		.catch((err) => {
+			console.log("error!!!", err)
+			dispatch({
+				type: ERROR,
+				payload: err.response ? err.response.data : "COULD NOT CONNECT",
+			});
+		})
+}
+
+export const sentiment = (user) => async (dispatch) => {
+	// dispatch({
+	//     type: LOADING,
+	// });
+
+	await AxiosInstance.get("/sentiment", {
+		params: {
+			user
+		}
+	})
+		.then((res) => {
+			dispatch({
+				type: SENTIMENT_SUCCESS,
+				payload: res,
+			})
+			console.log("sentiment data is here so now next")
+		})
+		.catch((err) => {
+			console.log("error!!!", err)
+			dispatch({
+				type: ERROR,
+				payload: err.response ? err.response.data : "COULD NOT CONNECT",
+			});
+		})
+}
+
+
+export const wordCloud = (user) => async (dispatch) => {
+	// dispatch({
+	//     type: LOADING,
+	// });
+	await AxiosInstance.get("/wordCloud", {
+		params: {
+			user
+		}
+	})
+		.then((res) => {
+			dispatch({
+				type: WORDLCLOUD_SUCCESS,
+				payload: res,
+			});
 
 		})
 		.catch((err) => {
@@ -40,109 +118,20 @@ export const outreach = (user) => (dispatch) => {
 		})
 }
 
-export const sentiment = (user) => (dispatch) => {
+export const totalMentions = (user) => async (dispatch) => {
 	// dispatch({
 	//     type: LOADING,
 	// });
-
-	AxiosInstance.get("/sentiment", {
+	await AxiosInstance.get("/totalMentions", {
 		params: {
 			user
 		}
 	})
 		.then((res) => {
-			console.log("succcesss bitccchh!!!", res)
-			setTimeout(function () {
-				dispatch({
-					type: SENTIMENT_SUCCESS,
-					payload: res,
-				})
-			}, 15000);
-
-		})
-		.catch((err) => {
-			console.log("error!!!", err)
 			dispatch({
-				type: ERROR,
-				payload: err.response ? err.response.data : "COULD NOT CONNECT",
+				type: MENTIONS_SUCCESS,
+				payload: res,
 			});
-		})
-}
-
-export const buzz = (user) => (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
-
-	AxiosInstance.get("/buzz", {
-		params: {
-			user
-		}
-	})
-		.then((res) => {
-			console.log("succcesss bitccchh!!!", res)
-			setTimeout(function () {
-				dispatch({
-					type: BUZZ_SUCCESS,
-					payload: res,
-				});
-			}, 5000)
-
-		})
-		.catch((err) => {
-			console.log("error!!!", err)
-			dispatch({
-				type: ERROR,
-				payload: err.response ? err.response.data : "COULD NOT CONNECT",
-			});
-		})
-}
-
-export const wordCloud = (user) => (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
-	AxiosInstance.get("/wordCloud", {
-		params: {
-			user
-		}
-	})
-		.then((res) => {
-			console.log("succcesss bitccchh!!!", res)
-			setTimeout(function () {
-				dispatch({
-					type: WORDLCLOUD_SUCCESS,
-					payload: res,
-				});
-			}, 12000)
-
-		})
-		.catch((err) => {
-			console.log("error!!!", err)
-			dispatch({
-				type: ERROR,
-				payload: err.response ? err.response.data : "COULD NOT CONNECT",
-			});
-		})
-}
-
-export const totalMentions = (user) => (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
-	AxiosInstance.get("/totalMentions", {
-		params: {
-			user
-		}
-	})
-		.then((res) => {
-			console.log("succcesss bitccchh!!!", res)
-			setTimeout(function () {
-				dispatch({
-					type: MENTIONS_SUCCESS,
-					payload: res,
-				});
-			}, 14000)
 		})
 		.catch((err) => {
 			console.log("error!!!", err)

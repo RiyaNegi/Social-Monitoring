@@ -47,7 +47,7 @@ const Predictor = () => {
                         <stop offset="95%" stopColor="#323232" stopOpacity={0} />
                     </linearGradient>
                 </defs> */}
-                <XAxis dataKey="name" />
+                <XAxis dataKey="date" />
                 {/* <CartesianGrid strokeDasharray="5 5" /> */}
                 <YAxis />
                 <Tooltip />

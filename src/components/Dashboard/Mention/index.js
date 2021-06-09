@@ -13,7 +13,7 @@ const Index = () => {
     const data = dashboardState.mentionsData
 
     console.log("total Mentions data->", dashboardState.mentionsData)
-    return <div className="card-width d-flex flex-column px-3" style={{ width: 500, height: 250 }}>
+    return <div className="card-width d-flex flex-column" style={{ width: 450, height: 250 }}>
         <OverlayTrigger
             placement={'right'}
             overlay={

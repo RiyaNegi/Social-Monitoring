@@ -6,8 +6,6 @@ import isAuthenticated from "./utils/isAuthenticated"
 
 
 function App(props) {
-  // console.log("state:", auth && auth.loggedIn)
-  // console.log("login status:", isAuthenticated())
 
   return (
     <div className="App">
@@ -23,7 +21,7 @@ function App(props) {
             {props.children}</div>) : props.history.push("/login")}
         </div>
       )}
-      <div className="home-footer">A project made with ❤️ by Riya Negi, Neel Gandhi  |  View source code</div>
+      {/* <div className="home-footer"><a style={{ color: "#4a4a4a" }} href="https://github.com/RiyaNegi/Social-Monitoring">A project made with ❤️ by Riya Negi, Neel Gandhi  |  View source code</a></div> */}
 
     </div>
   );

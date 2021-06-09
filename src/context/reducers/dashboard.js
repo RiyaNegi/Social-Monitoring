@@ -12,9 +12,10 @@ import {
 const dashboard = (state, { payload, type }) => {
   switch (type) {
     case OUTREACH_SUCCESS:
+      console.log("outreach payload->", payload.data)
       return {
         ...state,
-        outreachData: payload.data,
+        outreachData: payload.data.highlow,
         isloading: false
       }
     case SENTIMENT_SUCCESS:
@@ -35,13 +36,13 @@ const dashboard = (state, { payload, type }) => {
     case WORDLCLOUD_SUCCESS:
       return {
         ...state,
-        wordCloudData: payload.data,
+        wordCloudData: payload.data.wordcloud,
         isloading: false
       }
     case MENTIONS_SUCCESS:
       return {
         ...state,
-        mentionsData: payload.data,
+        mentionsData: payload.data.total_mentions,
         isloading: false
       }
     case GET_IDENTITY:

@@ -45,11 +45,12 @@ export const signup = ({ email, brand, keywords, password }) => (dispatch) => {
   dispatch({
     type: LOADING,
   });
+  console.log("signup", keywords.toString())
 
   AuthAxios.post("/signup", JSON.stringify({
     username: email,
     brand: brand,
-    keywords: keywords,
+    keywords: keywords.toString(),
     password: password,
   }))
     .then((res) => {

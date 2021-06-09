@@ -24,7 +24,7 @@ export default function Index() {
 
   console.log("buzz data->", dashboardState.buzzData)
 
-  const Data = dashboardState.buzzData
+  const Data = dashboardState.buzzData.items
 
   return (
     <div className="buzz">

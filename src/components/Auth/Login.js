@@ -59,7 +59,6 @@ const Login = () => {
     login(form)(authDispatch);
   }
 
-  console.log("Error ->", authState.error)
 
   return <div className="form-div">
     <div className="wave"><img src={wave} style={{ width: 1550, height: 790 }} /></div>

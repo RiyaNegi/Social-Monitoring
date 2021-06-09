@@ -16,29 +16,27 @@ import TestAxios from "../test/TestAxios"
 
 const Dashboard = () => {
   const { time, dashboardDispatch, dashboardState } = useContext(GlobalContext)
-  console.log("identity:", dashboardState.identity)
 
   useEffect(() => {
     identity(dashboardDispatch)
   }, [])
 
   useEffect(() => {
-    console.log("calling outreachhh")
-    outreach(dashboardState.identity)(dashboardDispatch)
-    sentiment(dashboardState.identity)(dashboardDispatch)
-    buzz(dashboardState.identity)(dashboardDispatch)
-    wordCloud(dashboardState.identity)(dashboardDispatch)
-    totalMentions(dashboardState.identity)(dashboardDispatch)
-  }, [dashboardDispatch, dashboardState.identity])
+    async function getData() {
+      await buzz(dashboardState.identity)(dashboardDispatch)
+    }
+    getData()
+
+  }, [dashboardState.identity])
 
   return <div className="dashboard-body">
-    <div>Time : {time}</div>
+    {/* <div>Time : {time}</div> */}
     {(dashboardState.outreachData.length !== 0 && dashboardState.sentimentData.line.length !== 0 &&
       dashboardState.sentimentData.pie.length !== 0 && dashboardState.buzzData.length !== 0 &&
       dashboardState.wordCloudData.length !== 0 && dashboardState.mentionsData.length !== 0)
       ? (<div data-testid="show-data">
         <div className="card-bodyTop" >
-          <p id="some-id">heelooo testttt</p>
+          <p id="some-id"></p>
           <div className="card m-2 p-3 body-radius  one" data-testid="outreach">
             <Predictor />
           </div>

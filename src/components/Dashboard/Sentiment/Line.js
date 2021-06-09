@@ -18,12 +18,12 @@ const Linegraph = (lineData) => {
             }}
         >
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
-            <XAxis dataKey="name" />
+            <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
             <Legend />
             <Line type="monotone" dataKey="negative" stroke="#6B64F7" activeDot={{ r: 8 }} />
-            <Line type="monotone" dataKey="postive" stroke="#C35BB1" />
+            <Line type="monotone" dataKey="positive" stroke="#C35BB1" />
         </LineChart>
     </ResponsiveContainer>
 }
