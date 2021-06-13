@@ -46,8 +46,9 @@ class User(object):
         return "User(id='%s')" % self.id
 
 users = [
-    User(1, 'milind', 'milind'),
+    User(1, 'zerodha@gmail.com', 'zerodha'),
     User(2, 'mike', 'mike'),
+    User(3, 'riya@gmail.com', 'riya'),
 ]
 
 username_table = {u.username: u for u in users}

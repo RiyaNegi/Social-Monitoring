@@ -78,11 +78,11 @@ export default function Index() {
         {active === 'All'
           ? Data.map(i => <BuzzBody data={i} />)
           : active === 'Reddit'
-            ? Data.filter(i => i.media === 'Reddit').map(i => <BuzzBody data={i} />)
+            ? Data.filter(i => i.site === 'Reddit').map(i => <BuzzBody data={i} />)
             : active === 'Youtube'
-              ? Data.filter(i => i.media === 'Youtube').map(i => <BuzzBody data={i} />)
+              ? Data.filter(i => i.site === 'Youtube').map(i => <BuzzBody data={i} />)
               : active === 'Twitter'
-                ? Data.filter(i => i.media === 'Twitter').map(i => <BuzzBody data={i} />)
+                ? Data.filter(i => i.site === 'Twitter').map(i => <BuzzBody data={i} />)
                 : null}
       </article>
     </div>

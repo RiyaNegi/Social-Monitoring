@@ -97,7 +97,7 @@ export const wordCloud = (user) => async (dispatch) => {
 	// dispatch({
 	//     type: LOADING,
 	// });
-	await AxiosInstance.get("/wordCloud", {
+	await AxiosInstance.get("/wordcloud", {
 		params: {
 			user
 		}

@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div className="homepage">
             <div className="home-nav">
-                <div className="home-name ml-6 mt-3">Social Sprout </div>
+                <div className="home-name ml-6 mt-3">Canary</div>
                 <div className="home-login "><a style={{ textDecoration: "none", color: "rgb(49, 49, 49)" }} href="/login">login</a></div>
             </div>
             <hr className="container" style={{ outline: "none", border: "none", backgroundColor: "black", height: 0.5, width: "80%" }} />

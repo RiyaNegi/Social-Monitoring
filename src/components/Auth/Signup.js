@@ -98,7 +98,7 @@ const Signup = () => {
     return <div className="form-div">
         <div className="wave"><img src={wave} style={{ width: 1550, height: 790 }} /></div>
         <div className="form-card">
-            <div className="form-title">Social Sprout</div>
+            <div className="form-title">Canary</div>
             <hr className="container mt-2" style={{ outline: "none", border: "none", backgroundColor: "black", height: 0.5, width: "50%" }} />
             <div className="d-flex">
                 {!isMobile && <div className="signup-img"><img src={signupImg} style={{ width: 400, height: 400 }} /></div>}

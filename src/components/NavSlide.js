@@ -11,7 +11,7 @@ const NavSlide = () => {
   }
   return <div>
     <Navbar className="px-4 py-1" bg="dark" variant="dark">
-      <Navbar.Brand className="web-name" href="/dashboard"><div className="mt-1">Social Sprout</div></Navbar.Brand>
+      <Navbar.Brand className="web-name" href="/dashboard"><div className="mt-1">Canary</div></Navbar.Brand>
       <Nav className="ml-auto">
         <div className="link mr-4" onClick={() => handleLogout()}>Logout</div>
         <div className="link" onClick={() => handleLogout()}>Profile</div>

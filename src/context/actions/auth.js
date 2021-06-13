@@ -55,6 +55,7 @@ export const signup = ({ email, brand, keywords, password }) => (dispatch) => {
   }))
     .then((res) => {
       console.log("succcesss bitccchh!!!", res)
+      History.push('/login')
     })
     .catch((err) => {
       console.log("error!!!", err)

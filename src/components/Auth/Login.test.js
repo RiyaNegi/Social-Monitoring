@@ -19,7 +19,7 @@ test('renders login page', () => {
     renderWithContext(<BrowserRouter>
         <Login authState={{ error: "" }} />
     </BrowserRouter>);
-    const headerText = screen.getByText("Social Sprout");
+    const headerText = screen.getByText("Canary");
     const formHeading = screen.getByText("Login");
     expect(headerText).toBeInTheDocument();
     expect(formHeading).toBeInTheDocument();
@@ -29,7 +29,7 @@ test('login page form cannot be submitted if any empty values', () => {
     renderWithContext(<BrowserRouter>
         <Login />
     </BrowserRouter>);
-    const headerText = screen.getByText("Social Sprout");
+    const headerText = screen.getByText("Canary");
     const formHeading = screen.getByText("Login");
     const input = screen.getByTestId("email")
     const inputPswd = screen.getByTestId("password")
