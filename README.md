@@ -1,6 +1,6 @@
 # Social Monitoring Dashboard
 
-This project was built on react and flask. 
+This project was built on react-hooks, context API and flask with JWT authentication. 
 
 With this application we are able to utilize data for data interpretations and visualizations such as Outreach prediction, word cloud, sentiment analysis and brand mentions. 
 
@@ -17,6 +17,12 @@ The outreach prediction where by analyzing the previous trends and training the 
 1. PRAW / Tweepy  API
 2. Youtube Data API V3
 3. Twitter API V2
+
+![landing page](https://github.com/RiyaNegi/Social-Monitoring/blob/main/src/assets/Screenshot%20from%202021-06-10%2012-03-25.png)
+![signup page](https://github.com/RiyaNegi/Social-Monitoring/blob/main/src/assets/Screenshot%20from%202021-06-10%2012-03-39.png)
+![login page](https://github.com/RiyaNegi/Social-Monitoring/blob/main/src/assets/Screenshot%20from%202021-06-10%2012-03-31.png)
+![dashboard page](https://github.com/RiyaNegi/Social-Monitoring/blob/main/src/assets/Screenshot%20from%202021-06-11%2000-21-46.png)
+
 
 
 ### `npm start`
