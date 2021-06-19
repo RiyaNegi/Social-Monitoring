@@ -12,10 +12,6 @@ import {
 
 
 export const buzz = (user) => async (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
-
 	await AxiosInstance.get("/buzz", {
 		params: {
 			user
@@ -27,7 +23,6 @@ export const buzz = (user) => async (dispatch) => {
 				payload: res,
 			});
 			console.log("buzz data is here so now next")
-			outreach(user)(dispatch)
 		})
 		.catch((err) => {
 			console.log("error!!!", err)
@@ -39,9 +34,6 @@ export const buzz = (user) => async (dispatch) => {
 }
 
 export const outreach = (user) => async (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
 	await AxiosInstance.get("/outreach", {
 		params: {
 			user
@@ -53,9 +45,6 @@ export const outreach = (user) => async (dispatch) => {
 				payload: res,
 			});
 			console.log("outreach data is here so now next")
-			sentiment(user)(dispatch)
-			wordCloud(user)(dispatch)
-			totalMentions(user)(dispatch)
 		})
 		.catch((err) => {
 			console.log("error!!!", err)
@@ -67,9 +56,6 @@ export const outreach = (user) => async (dispatch) => {
 }
 
 export const sentiment = (user) => async (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
 
 	await AxiosInstance.get("/sentiment", {
 		params: {
@@ -94,9 +80,6 @@ export const sentiment = (user) => async (dispatch) => {
 
 
 export const wordCloud = (user) => async (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
 	await AxiosInstance.get("/wordcloud", {
 		params: {
 			user
@@ -119,9 +102,6 @@ export const wordCloud = (user) => async (dispatch) => {
 }
 
 export const totalMentions = (user) => async (dispatch) => {
-	// dispatch({
-	//     type: LOADING,
-	// });
 	await AxiosInstance.get("/totalMentions", {
 		params: {
 			user

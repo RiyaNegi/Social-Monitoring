@@ -24,6 +24,10 @@ const Dashboard = () => {
   useEffect(() => {
     async function getData() {
       await buzz(dashboardState.identity)(dashboardDispatch)
+      await outreach(dashboardState.identity)(dashboardDispatch)
+      await sentiment(dashboardState.identity)(dashboardDispatch)
+      await totalMentions(dashboardState.identity)(dashboardDispatch)
+      await wordCloud(dashboardState.identity)(dashboardDispatch)
     }
     getData()
 
